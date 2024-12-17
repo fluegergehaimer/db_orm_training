@@ -1,12 +1,13 @@
 from django.urls import path, include
 from .views import (
-    AircraftViewSet
+    AircraftViewSet,
+    SeatViewSet
 )
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'aircrafts', AircraftViewSet, basename='aircrafts')
+router.register(r'seats', SeatViewSet, basename='seats')
 urlpatterns = [
     path('', include(router.urls)),
-    # path('auth/', AuthViewSet.as_view({'get': 'list', 'post': 'create'}), name='auth_list'),
 ]
